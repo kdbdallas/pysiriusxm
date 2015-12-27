@@ -7,7 +7,7 @@
     :alt: Number of PyPI downloads
 
 .. image:: https://img.shields.io/travis/mopidy/pysiriusxm/v1.x/develop.svg?style=flat
-    :target: https://travis-ci.org/pysiriusxm
+    :target: https://travis-ci.org/kdbdallas/pysiriusxm
     :alt: Travis CI build status
 
 .. image:: https://img.shields.io/coveralls/mopidy/pysiriusxm/v1.x/develop.svg?style=flat
