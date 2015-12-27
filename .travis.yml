@@ -1,0 +1,46 @@
+sudo: false
+
+language: python
+
+addons:
+  apt:
+    sources:
+      - mopidy-stable
+    packages:
+      - libffi-dev
+      - libspotify-dev
+      - python-dev
+      - python3-dev
+
+env:
+  - TOX_ENV=py27
+  - TOX_ENV=py33
+  - TOX_ENV=py34
+  - TOX_ENV=docs
+  - TOX_ENV=flake8
+
+# Pending pypy 2.6+ on Travis
+#  - TOX_ENV=pypy
+#  - TOX_ENV=pypy3
+
+install:
+  - "pip install tox"
+
+script:
+  - "tox -e $TOX_ENV"
+
+after_success:
+  - "if [ $TOX_ENV == 'py27' ]; then pip install coveralls; coveralls; fi"
+
+branches:
+  except:
+    - v2.x/debian
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#mopidy"
+    on_success: change
+    on_failure: change
+    use_notice: true
+    skip_join: true

@@ -1,0 +1,16 @@
+*.egg-info
+*.pyc
+*.so
+*.sw[po]
+.cache/
+.coverage
+.eggs/
+.tox/
+__pycache__/
+_build/
+_spotify.*
+build/
+cover/
+dist/
+spotify_appkey.key
+tmp/

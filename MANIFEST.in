@@ -1,0 +1,19 @@
+include *.py
+include *.rst
+include *.txt
+include .mailmap
+include .travis.yml
+include AUTHORS
+include LICENSE
+include MANIFEST.in
+include tox.ini
+
+recursive-include docs *
+prune docs/_build
+
+recursive-include examples *.py
+prune examples/tmp
+
+recursive-include tests *.py
+
+global-exclude __pycache__/*
