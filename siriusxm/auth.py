@@ -2,10 +2,11 @@ from __future__ import unicode_literals
 
 import logging
 import weakref
-import keyring
+#import keyring
 
 import siriusxm
 import siriusxm.user
+import siriusxm.api
 
 logger = logging.getLogger(__name__)
 
@@ -51,6 +52,9 @@ class Auth():
             password = password.decode('utf_8')
         else:
             raise AttributeError('password is required to login')
+
+        api = siriusxm.api.API(self.config)
+        api.authenticate()
 
     @property
     def remembered_username(self):

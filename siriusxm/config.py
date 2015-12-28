@@ -118,6 +118,7 @@ class Config(object):
 
     @sxmAppVersion.setter
     def sxmAppVersion(self, value):
+        """Must be in the format of X.X.X.X"""
         self.sxmAppVersion = value
 
     @property
