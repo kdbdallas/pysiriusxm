@@ -12,14 +12,14 @@ from invoke import run, task
 #    run('make -C docs/ html', warn=warn)
 
 
-#@task
-#def test(coverage=False, watch=False, warn=False):
-#    if watch:
-#        return watcher(test, coverage=coverage)
-#    cmd = 'py.test'
-#    if coverage:
-#        cmd += ' --cov=siriusxm --cov-report=term-missing'
-#    run(cmd, pty=True, warn=warn)
+@task
+def test(coverage=False, watch=False, warn=False):
+    if watch:
+        return watcher(test, coverage=coverage)
+    cmd = 'py.test'
+    if coverage:
+        cmd += ' --cov=siriusxm --cov-report=term-missing'
+    run(cmd, pty=True, warn=warn)
 
 
 @task
