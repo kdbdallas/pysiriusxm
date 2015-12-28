@@ -5,21 +5,21 @@ import sys
 
 from invoke import run, task
 
-@task
-def docs(watch=False, warn=False):
-    if watch:
-        return watcher(docs)
-    run('make -C docs/ html', warn=warn)
+#@task
+#def docs(watch=False, warn=False):
+#    if watch:
+#        return watcher(docs)
+#    run('make -C docs/ html', warn=warn)
 
 
-@task
-def test(coverage=False, watch=False, warn=False):
-    if watch:
-        return watcher(test, coverage=coverage)
-    cmd = 'py.test'
-    if coverage:
-        cmd += ' --cov=siriusxm --cov-report=term-missing'
-    run(cmd, pty=True, warn=warn)
+#@task
+#def test(coverage=False, watch=False, warn=False):
+#    if watch:
+#        return watcher(test, coverage=coverage)
+#    cmd = 'py.test'
+#    if coverage:
+#        cmd += ' --cov=siriusxm --cov-report=term-missing'
+#    run(cmd, pty=True, warn=warn)
 
 
 @task
@@ -66,7 +66,7 @@ def mac_wheels():
         run('%s/%s/bin/python%s setup.py bdist_wheel' % (
             prefix, version, suffix))
 
-    # Bundle libspotify into the wheels
+    # Bundle siriusxm into the wheels
     shutil.rmtree('./fixed_dist', ignore_errors=True)
     run('delocate-wheel -w ./fixed_dist ./dist/*.whl')
 
