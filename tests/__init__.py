@@ -11,8 +11,6 @@ except ImportError:
     # From PyPI
     import mock
 
-import siriusxm
-
 
 def buffer_writer(string):
     """Creates a function that takes a ``buffer`` and ``buffer_size`` as the

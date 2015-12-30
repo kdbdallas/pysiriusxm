@@ -11,7 +11,7 @@ import siriusxm.api
 logger = logging.getLogger(__name__)
 
 
-class Auth():
+class Auth(object):
 
     """If no ''config'' is provided, the default config is used."""
 

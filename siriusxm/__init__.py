@@ -62,14 +62,13 @@ def serialized(f):
     return wrapper
 
 
+class Bootstrap():
+    def __init__(self):
+        pass
+
 _setup_logging()
 
-#from siriusxm.audio import *  # noqa
+from siriusxm.api import *  # noqa
 from siriusxm.config import *  # noqa
-#from siriusxm.connection import *  # noqa
-#from siriusxm.error import *  # noqa
-#from siriusxm.eventloop import *  # noqa
-#from siriusxm.offline import *  # noqa
-#from siriusxm.session import *  # noqa
-#from siriusxm.track import *  # noqa
-#from siriusxm.version import *  # noqa
+from siriusxm.auth import *  # noqa
+from siriusxm.user import *  # noqa
