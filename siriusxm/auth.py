@@ -16,7 +16,7 @@ class Auth(object):
     """If no ''config'' is provided, the default config is used."""
 
     def __init__(self, config=None):
-        super(self).__init__()
+        super(Auth, self).__init__()
 
         if config is not None:
             self.config = config
@@ -82,3 +82,5 @@ class Auth(object):
         if username is None:
             return None
         return siriusxm.user.User(username)
+
+this = Auth()
