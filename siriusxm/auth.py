@@ -83,4 +83,4 @@ class Auth(object):
             return None
         return siriusxm.user.User(username)
 
-this = Auth()
+#this = Auth()
