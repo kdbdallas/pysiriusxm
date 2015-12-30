@@ -6,6 +6,7 @@ import weakref
 
 import siriusxm
 import siriusxm.user
+import siriusxm.api
 
 logger = logging.getLogger(__name__)
 
@@ -51,8 +52,6 @@ class Auth(object):
             password = password.decode('utf_8')
         else:
             raise AttributeError('password is required to login')
-
-        import siriusxm.api
 
         api = siriusxm.api.API(self.config)
         api.authenticate()
