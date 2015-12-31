@@ -72,3 +72,8 @@ class api():
 
         message = response["ModuleListResponse"]["messages"]["message"]
         print message
+
+    def __getattr__(self, attrname):
+        print('Trace: ' + attrname)
+
+        return getattr(self.wrapped, attrname)
