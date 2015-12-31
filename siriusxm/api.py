@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class API():
+class api():
 
     def __init__(self, config):
         self.username = config.username

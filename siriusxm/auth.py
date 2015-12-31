@@ -11,23 +11,23 @@ import siriusxm.api
 logger = logging.getLogger(__name__)
 
 
-class Auth(object):
+class auth(object):
 
     """If no ''config'' is provided, the default config is used."""
 
     def __init__(self, config=None):
-        super(Auth, self).__init__()
+        super(auth, self).__init__()
 
         if config is not None:
             self.config = config
         else:
-            self.config = siriusxm.Config()
+            self.config = siriusxm.config()
 
         self._wrCache = weakref.WeakValueDictionary()
 
     _wrCache = None
 
-    """A :class:`Config` instance with the current configuration.
+    """A :class:`config` instance with the current configuration.
 
     Once the session has been created, changing the attributes of this object
     will generally have no effect."""
@@ -53,7 +53,7 @@ class Auth(object):
         else:
             raise AttributeError('password is required to login')
 
-        api = siriusxm.api.API(self.config)
+        api = siriusxm.api(self.config)
         api.authenticate()
 
     @property
@@ -81,6 +81,6 @@ class Auth(object):
         username = self.config.username
         if username is None:
             return None
-        return siriusxm.user.User(username)
+        return siriusxm.user(username)
 
-#this = Auth()
+#this = auth()

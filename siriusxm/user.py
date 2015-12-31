@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-class User(object):
+class user(object):
 
     """A Sirius XM internet radio API user."""
 

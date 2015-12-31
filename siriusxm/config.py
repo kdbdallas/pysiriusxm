@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-class Config(object):
+class config(object):
 
     def __init__(self):
         # Defaults
