@@ -1,5 +1,12 @@
 from __future__ import unicode_literals
 
+from siriusxm import serialized
+
+__all__ = [
+    'user',
+]
+
+
 class user(object):
 
     """A Sirius XM internet radio API user."""
@@ -14,11 +21,13 @@ class user(object):
         self.remainingLockoutSeconds = 0
 
     @property
+    @serialized
     def display_name(self):
         """The user's displayable username."""
         return self.username
 
     @property
+    @serialized
     def session_id(self):
         """The user's session id."""
         return self.sessionID

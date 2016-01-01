@@ -8,6 +8,14 @@ import siriusxm
 import siriusxm.user
 import siriusxm.api
 
+from siriusxm import serialized
+
+
+__all__ = [
+    'auth',
+]
+
+
 logger = logging.getLogger(__name__)
 
 
@@ -15,6 +23,7 @@ class auth(object):
 
     """If no ''config'' is provided, the default config is used."""
 
+    @serialized
     def __init__(self, config=None):
         super(auth, self).__init__()
 
@@ -76,6 +85,7 @@ class auth(object):
         pass
 
     @property
+    @serialized
     def username(self):
         """The logged in :class:`User`."""
         username = self.config.username

@@ -8,6 +8,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+__all__ = [
+    'api',
+]
+
+
 class api():
 
     def __init__(self, config):
@@ -72,8 +77,3 @@ class api():
 
         message = response["ModuleListResponse"]["messages"]["message"]
         print message
-
-    def __getattr__(self, attrname):
-        print('Trace: ' + attrname)
-
-        return getattr(self.wrapped, attrname)
